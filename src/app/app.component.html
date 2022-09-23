@@ -1,0 +1,29 @@
+<h1>Time Since Pipe</h1>
+
+<div class="event-card">
+  <div>
+    <p><strong>Title :</strong> Hands-on Angular Modules</p>
+  </div>
+  <ng-container *ngIf="changeTime else actualTime">
+    <div style="background-color: yellow;  padding: 1px 0px;">
+      <p><strong>Happend : {{ timeStamp | timeSince }}</strong></p>
+    </div>
+  </ng-container>
+  <ng-template #actualTime>
+    <div style="background-color: yellow; padding: 1px 0px;">
+      <p><strong>Date : 25 August 2022</strong></p>
+    </div>
+  </ng-template>
+
+  <div>
+    <p><strong>Category :</strong> Front-End</p>
+  </div>
+  <div>
+    <p><strong>Presented By :</strong> Host Name Here</p>
+  </div>
+  <div>
+    <button class="btn" (click)="changeToTimeSince()">
+     {{changeTime ? 'Change to actual Time':'Change to time Since'}} 
+    </button>
+  </div>
+</div>
